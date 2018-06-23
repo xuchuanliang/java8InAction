@@ -3,7 +3,7 @@ package capter02;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Main {
+public class AppleMain {
     public static void main(String[] args){
 
     }
@@ -70,6 +70,10 @@ public class Main {
             }
         }
         System.out.println(result);
+    }
+
+    public void compaor(List<Apple> apples){
+        apples.sort((Apple apple1,Apple apple2)->apple1.getWeight().compareTo(apple2.getWeight()) );
     }
 
 

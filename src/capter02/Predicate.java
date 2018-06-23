@@ -1,5 +1,5 @@
 package capter02;
 
-public interface ApplePredicate {
-    boolean test(Apple apple);
+public interface Predicate<T> {
+    boolean test(T t);
 }

@@ -1,15 +1,10 @@
-package capter01;
+package capter02;
 
-import jdk.nashorn.internal.objects.annotations.Function;
-
-import java.util.ArrayList;
-import java.util.List;
-
-public class Apple {
+public class Apple implements Comparable<Apple>{
 
     private String color;
 
-    private int weight;
+    private Integer weight;
 
     public String getColor() {
         return color;
@@ -19,11 +14,11 @@ public class Apple {
         this.color = color;
     }
 
-    public int getWeight() {
+    public Integer getWeight() {
         return weight;
     }
 
-    public void setWeight(int weight) {
+    public void setWeight(Integer weight) {
         this.weight = weight;
     }
 
@@ -35,25 +30,9 @@ public class Apple {
         return apple.getWeight()>120;
     }
 
-    public static List<Apple> filterApple(List<Apple> apples,Predicate<Apple> p){
-        List<Apple> result = new ArrayList<>();
-        for(Apple apple:apples){
-            if(p.test(apple)){
-                result.add(apple);
-            }
-        }
-        return result;
-    }
-}
-
-interface Predicate<T>{
-    @Function
-    boolean test(T t);
-}
-
-class Test{
-    public static void main(String[] args){
-        Apple.filterApple(new ArrayList<>(),Apple::isGreen);
+    @Override
+    public int compareTo(Apple o) {
+        return 0;
     }
 }
 
