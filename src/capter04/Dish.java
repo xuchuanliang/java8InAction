@@ -13,6 +13,22 @@ public class Dish {
         this.type = type;
     }
 
+    public String getName() {
+        return name;
+    }
+
+    public boolean isVegetarian() {
+        return vegetarian;
+    }
+
+    public int getCalories() {
+        return calories;
+    }
+
+    public Type getType() {
+        return type;
+    }
+
     @Override
     public String toString() {
         return "Dish{" +
@@ -22,4 +38,6 @@ public class Dish {
                 ", type=" + type +
                 '}';
     }
+
+    public enum Type { MEAT, FISH, OTHER }
 }
