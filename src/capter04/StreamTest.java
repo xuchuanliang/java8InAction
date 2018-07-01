@@ -18,13 +18,16 @@ public class StreamTest {
             new Dish("prawns", false, 300, Dish.Type.FISH),
             new Dish("salmon", false, 450, Dish.Type.FISH) );
 
+
+
     public static void main(String[] args){
 //        test1();
 //        test2();
 //        test3();
 //        test4();
 //        test5();
-        test6();
+//        test6();
+        test9();
     }
     public static void test1(){
         List<String> threeHighCaloricDishNames = menu.stream().
@@ -92,4 +95,22 @@ public class StreamTest {
     public static void test7(){
         menu.stream().filter(d->d.getCalories()>100).skip(2).collect(Collectors.toList());
     }
+
+    public static void test8(){
+        List<String> words = Arrays.asList("Java 8", "Lambdas", "In", "Action");
+        List<Integer> ls = words.stream().map(String::length).collect(Collectors.toList());
+    }
+
+    public static void test9(){
+        List<Integer> ls = menu.stream().map(Dish::getName).map(String::length).collect(Collectors.toList());
+        System.out.println(ls);
+    }
+
+    public static void test10(){
+        String world = "Hello,World";
+        ArrayList<String> worlds = new ArrayList<>();
+//        worlds.stream().map(world.split("")).map(Arrays::stream).distinct().collect(Collectors.toList());
+    }
+
+
 }
