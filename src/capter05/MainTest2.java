@@ -4,6 +4,8 @@ import capter04.Dish;
 
 import java.util.*;
 import java.util.stream.Collectors;
+import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 public class MainTest2 {
     static Trader raoul = new Trader("Raoul", "Cambridge");
@@ -38,7 +40,9 @@ public class MainTest2 {
 //        test5();
 //        test6();
 //        test7();
-        test8();
+//        test8();
+//        test11();
+        test12();
     }
 
     //找出2011年的所有交易并按交易额排序（从低到高）
@@ -138,5 +142,23 @@ public class MainTest2 {
         menu.stream().mapToInt(Dish::getCalories).max();
 
         menu.stream().mapToInt(Dish::getCalories).boxed();
+    }
+
+    public static void test10(){
+        OptionalInt optionalInt = menu.stream().mapToInt(Dish::getCalories).max();
+        int max = optionalInt.orElse(1);
+        System.out.println(max);
+    }
+
+    public static void test11(){
+        //1到100中偶数的个数
+        long total = IntStream.range(1,100).filter(n->n%2==0).count();
+        System.out.println(total);
+    }
+
+    //创建流
+    public static void test12(){
+        Stream<String> stream = Stream.of("Java 8 ", "Lambdas ", "In ", "Action");
+        stream.map(String::toUpperCase).forEach(System.out::println);
     }
 }
